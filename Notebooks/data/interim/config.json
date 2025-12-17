@@ -1,9 +1,9 @@
 {
   "BASE_PATH": "G:\\.shortcut-targets-by-id\\1VctTphaltRx4xcPxmTJlRTrxLalyuEt8\\Labor Force Survey",
-  "DATA_DIR": "data",
-  "INTERIM_DIR": "data\\interim",
-  "PROCESSED_DIR": "data\\processed",
-  "LOG_DIR": "logs",
+  "DATA_DIR": "C:\\Users\\SHANIA\\Downloads\\Preprocessing\\Notebooks\\data",
+  "INTERIM_DIR": "C:\\Users\\SHANIA\\Downloads\\Preprocessing\\Notebooks\\data\\interim",
+  "PROCESSED_DIR": "C:\\Users\\SHANIA\\Downloads\\Preprocessing\\Notebooks\\data\\processed",
+  "LOG_DIR": "C:\\Users\\SHANIA\\Downloads\\Preprocessing\\Notebooks\\logs",
   "MONTH_ORDER": {
     "January": 1,
     "February": 2,
