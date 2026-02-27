@@ -1,0 +1,10 @@
+Variable,Status_Description,NOT IN THE LABOR FORCE_OR,UNEMPLOYED_OR
+Normal Working Hours per Day,Success (Converged),2.39e+27,5.90e+10
+Total Hours Worked for all Jobs,Success (Converged),2.39e+27,5.90e+10
+Work Indicator,Perfectly Observed (No Missingness),,
+Available for Work,Success (Converged),8.27e-05,2.34e-12
+Looked for Work or Tried to Establish Business During the Past Week,Success (Converged),4.19e-28,1.69e-11
+Previous Job Indicator,Success (Converged),4.19e-28,1.69e-11
+Want More Hours of Work,Success (Converged),2.39e+27,5.90e+10
+Look for Additional Work,Success (Converged),2.39e+27,5.90e+10
+Other Job Indicator,Success (Converged),2.39e+27,5.90e+10
