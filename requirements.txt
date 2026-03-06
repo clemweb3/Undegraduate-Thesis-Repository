@@ -1,0 +1,20 @@
+# Data Manipulation and Analysis
+pandas
+numpy
+
+# Machine Learning and Statistical Modeling
+scikit-learn
+statsmodels
+
+# Data Visualization and Diagnostics
+matplotlib
+seaborn
+missingno
+
+# Excel File Processing (Required for LFS Metadata)
+openpyxl
+
+# Jupyter Environment
+ipython
+jupyter
+ipykernel
