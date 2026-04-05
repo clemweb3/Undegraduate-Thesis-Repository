@@ -24,7 +24,7 @@ The repository is designed for **full reproducibility**: every preprocessing dec
 
 ## Repository Structure
 .
-├── 00_Settings.ipynb               # Centralized configuration (data paths, parameters)
+├── 00_Settings.ipynb
 ├── 01_Metadata_Harmonization.ipynb
 ├── 02_Cross_Wave_Harmonization.ipynb
 ├── 03_Geographic_Reconstruction.ipynb
@@ -40,14 +40,13 @@ The repository is designed for **full reproducibility**: every preprocessing dec
 ├── 13_Dashboard.ipynb
 ├── 14_Export_and_Outputs.ipynb
 ├── data/
-│   ├── raw/                        # PSA LFS microdata (not included — see Data Access below)
-│   ├── interim/                    # Intermediate outputs per pipeline stage
-│   └── processed/                  # Final RFVI outputs by geographic level
+│   ├── raw/
+│   ├── interim/
+│   └── processed/
 ├── outputs/
-│   ├── figures/                    # Scree plots, RFVI rankings, cluster distributions
-│   └── tables/                     # Cos² tables, cluster profiles, regional RFVI
-└── dashboard/                      # Interactive app assets
----
+│   ├── figures/
+│   └── tables/
+└── dashboard/
 
 ## Quickstart: Reproducing the Analysis
 
@@ -90,7 +89,7 @@ Execute notebooks sequentially:
 ​```bash
 jupyter nbconvert --to notebook --execute 01_Metadata_Harmonization.ipynb
 jupyter nbconvert --to notebook --execute 02_Cross_Wave_Harmonization.ipynb
-# ... continue through 14_Export_and_Outputs.ipynb
+ ... continue through 14_Export_and_Outputs.ipynb
 ​```
 
 Or run interactively in JupyterLab in order from `01` to `14`.
