@@ -5,7 +5,7 @@
 
 ---
 
-## Overview
+### Overview
 
 This repository contains the complete analytical pipeline for constructing the **Regional Financial Vulnerability Index (RFVI)** from Philippine Statistics Authority (PSA) Labor Force Survey (LFS) microdata spanning 2018–2024 (40 survey months, ~6 million household-level observations). The pipeline operationalizes the theoretical S-R-E framework of Voith and Mauser (2024) through Factor Analysis of Mixed Data (FAMD), composite index construction, and K-means clustering, all delivered via an interactive policy dashboard.
 
@@ -13,7 +13,7 @@ The repository is designed for **full reproducibility**: every preprocessing dec
 
 ---
 
-## Key Findings
+### Key Findings
 
 - **Three latent vulnerability dimensions** were extracted — Sensitivity (eigenvalue 14.32), Resilience (5.57), and Exposure (2.80) — explaining **32.86% of total variance** across 16 harmonized mixed-type variables.
 - **NCR ranks as most financially vulnerable** among all 17 regions, driven by labor market *sensitivity* (high job-seeking and irregular employment), not geographic exposure — a distinction invisible to single-indicator measures.
@@ -22,7 +22,8 @@ The repository is designed for **full reproducibility**: every preprocessing dec
 
 ---
 
-## Repository Structure
+### Repository Structure
+```
 .
 ├── 00_Settings.ipynb
 ├── 01_Metadata_Harmonization.ipynb
@@ -47,7 +48,7 @@ The repository is designed for **full reproducibility**: every preprocessing dec
 │   ├── figures/
 │   └── tables/
 └── dashboard/
-
+```
 ## Quickstart: Reproducing the Analysis
 
 ### 1. Prerequisites
@@ -96,9 +97,9 @@ Or run interactively in JupyterLab in order from `01` to `14`.
 
 ---
 
-## Methodology Summary
+### Methodology Summary
 
-### Data Scope
+#### Data Scope
 - **Source:** PSA Labor Force Survey, 40 survey months across 2018, 2019, 2022, 2023, 2024
 - **Scale:** ~6 million household-level observations
 - **Variables retained:** 16 harmonized variables — 13 categorical, 3 numeric
@@ -110,26 +111,26 @@ Or run interactively in JupyterLab in order from `01` to `14`.
 4. **Missingness diagnostics** — FMI computed per variable per survey month; logistic regression used to assess MAR assumptions; work-related missingness recoded via logic rules
 5. **Statistical imputation** — RF-MICE across 5 imputed datasets
 
-### FAMD
+#### FAMD
 - IncrementalPCA for computational scalability
 - Eigenvalues, Cos² values, and dimension scores averaged across 5 imputations
 - Scree plot elbow criterion used for retention (3 dimensions retained)
 - Cos² threshold: 1/16 = 0.0625
 
-### RFVI Construction
+#### RFVI Construction
 RFVI = (Sensitivity + (1 − Resilience) + Exposure) / 3
 - Factor scores normalized via Min-Max scaling to [0, 1]
 - Resilience inverted to reflect its protective role
 - Equal weighting following Hasler et al. (2022)
 - Aggregated at national, regional, provincial, and city levels per survey month
 
-### Clustering
+#### Clustering
 - K-means on standardized S-R-E scores at city-month level
 - K=3 selected via WCSS elbow + Silhouette coefficient
 
 ---
 
-## Dimension–Variable Map
+#### Dimension–Variable Map
 
 | Variable | D1 Sensitivity | D2 Resilience | D3 Exposure |
 |---|---|---|---|
@@ -150,7 +151,7 @@ RFVI = (Sensitivity + (1 − Resilience) + Exposure) / 3
 
 ---
 
-## Cluster Profiles
+### Cluster Profiles
 
 | Cluster | Label | Sensitivity | Resilience | Exposure |
 |---|---|---|---|---|
@@ -160,13 +161,13 @@ RFVI = (Sensitivity + (1 − Resilience) + Exposure) / 3
 
 ---
 
-## Interactive Dashboard
+### Interactive Dashboard 
 
 An interactive dashboard exposing S, R, and E as independently navigable layers alongside the composite RFVI is available at the repository link above. Supports filtering by region, province, city, and survey month — designed for policy targeting aligned with **SDG 8** and **SDG 10**.
 
 ---
 
-## Limitations and Future Work
+### Limitations and Future Work
 
 - Equal weighting is a current constraint; FIES integration may support empirical differential weighting
 - City-level analysis limited to 2022 onward due to PSU rotation across master sample frames
@@ -174,14 +175,13 @@ An interactive dashboard exposing S, R, and E as independently navigable layers 
 - Longitudinal panel data would enable individual household trajectory analysis
 
 ---
----
 
-## Ethical Considerations
+### Ethical Considerations
 
 All data are publicly available, anonymized LFS datasets from the PSA. No personally identifiable information is accessed or disclosed. This study is conducted strictly for academic and policy-oriented purposes.
 
 ---
 
-## License
+### License
 
 MIT License. See `LICENSE` for full terms.
